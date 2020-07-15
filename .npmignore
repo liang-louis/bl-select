@@ -7,3 +7,10 @@ public/
 vue.config.js
 babel.config.js
 *.map
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
