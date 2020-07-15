@@ -2,6 +2,7 @@
   <div id="app">
     <bl-select
       v-model="value"
+      clearable
       :options="options"
       :props="{
         value: 'value',
@@ -13,13 +14,9 @@
 </template>
 
 <script>
-import BlSelect from './components/index'
-
 export default {
   name: 'App',
-  components: {
-    BlSelect
-  },
+  components: {},
   data() {
     return {
       value: '',

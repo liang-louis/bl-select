@@ -2,7 +2,42 @@
 
 ### 基于element UI下el-select的拼音检索
 需要装 elementUI和pinyin-match
-## 属性Props 
+### 安装
+`npm i bl-select`
+### 使用
+在main.js加
+```
+import BlSelect from 'bl-select'
+Vue.use(BlSelect)
+```
+使用的地方   
+template部分
+```
+<bl-select
+    v-model="value"
+    :options="options"
+    :props="{label:'label', value:'value'}"
+/>
+```
+js部分
+```js
+data() {
+      return {
+        value: '',
+        options: [
+          {
+            label: '张三',
+            value: 1
+          },
+          {
+            label: '李四',
+            value: 2
+          }
+        ]
+      }
+    }
+```
+### 属性Props 
 
 属性 | 类型 | 默认值 | 说明
 ---|---|---|---

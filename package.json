@@ -1,12 +1,26 @@
 {
   "name": "bl-select",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "基于el-select的vue拼音检索组件",
+  "keywords": [
+    "BlSelect",
+    "bl-select",
+    "pinyin select",
+    "pinyin el-select",
+    "vue",
+    "Element el-select"
+  ],
+  "main": "lib/BlSelect.umd.min.js",
+  "author": {
+    "name": "louis"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name BlSelect --dest lib packages/index.js"
   },
+  "license": "MIT",
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
