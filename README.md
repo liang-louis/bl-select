@@ -1,7 +1,7 @@
 # bl-select
 
 ### 基于element UI下el-select的拼音检索
-需要装 elementUI和pinyin-match
+需要装 elementUI
 ### 安装
 `npm i bl-select`
 ### 使用
@@ -55,7 +55,8 @@ props | Object | - | label和value的配置 见下表
 ---|---
 label | 设置label
 value | 设置的value
-##方法
+
+## 方法
 方法名 | 说明
 ---|---
 change| 返回 value的值。如果设置了row 则返回一个对象
