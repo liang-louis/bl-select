@@ -1,5 +1,5 @@
 # bl-select
-
+![示例图片](examples/assets/GIF.gif)
 ### 基于element UI下el-select的拼音检索
 需要装 elementUI
 ### 安装
