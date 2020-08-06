@@ -2,6 +2,7 @@
 examples/
 packages/
 public/
+dist/
 
 # 忽略指定文件
 vue.config.js
@@ -14,3 +15,6 @@ babel.config.js
 *.njsproj
 *.sln
 *.sw?
+.editorconfig
+.eslintignore
+.eslintrc.js

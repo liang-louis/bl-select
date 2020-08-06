@@ -3,13 +3,20 @@
     <bl-select
       v-model="value"
       clearable
+      multiple
+      collapse-tags
+      all
+      :all-text="allText"
       :options="options"
       :props="{
         value: 'value',
         label: 'label'
       }"
       @change="change"
+      @select-all="selectAll"
+      @remove-tag="removeTag"
     />
+    {{ value }}
   </div>
 </template>
 
@@ -21,26 +28,48 @@ export default {
     return {
       value: '',
       options: [{
-        value: '选项1',
+        value: '1',
         label: '黄金糕'
       }, {
-        value: '选项2',
+        value: '2',
         label: '双皮奶'
       }, {
-        value: '选项3',
+        value: '3',
+        label: '北京糖葫芦'
+      }, {
+        value: '4',
         label: '蚵仔煎'
       }, {
-        value: '选项4',
+        value: '5',
         label: '龙须面'
       }, {
-        value: '选项5',
+        value: '6',
         label: '北京烤鸭'
-      }]
+      }],
+      allText: '全选'
     }
   },
   methods: {
+    selectAll() {
+      if (this.value.length < this.options.length) {
+        this.value = []
+        this.options.forEach(item => {
+          this.value.push(item.value)
+        })
+        this.value.unshift(this.allText)
+      }
+    },
     change(val) {
-      console.log(val)
+      if (!val.includes(this.allText) && this.value.length === this.options.length) {
+        this.value.unshift(this.allText)
+      } else if (val.includes(this.allText) && val.length - 1 < this.options.length) {
+        this.value = this.value.filter(item => item !== this.allText)
+      }
+    },
+    removeTag(val) {
+      if (val === this.allText) {
+        this.value = []
+      }
     }
   }
 }

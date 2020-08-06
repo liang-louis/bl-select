@@ -1,5 +1,6 @@
 <template>
   <el-select
+    ref="blSelect"
     v-model="newValue"
     :filterable="filterable"
     :multiple="multiple"
@@ -11,6 +12,12 @@
     v-on="$listeners"
     @focus="onFocus"
   >
+    <el-option
+      v-if="multiple && all"
+      :label="allText"
+      :value="allText"
+      @click.native="selectAll"
+    />
     <el-option
       v-for="item in optionsData"
       :key="item[props.value]"
@@ -35,6 +42,15 @@ export default {
     multiple: {
       type: Boolean,
       default: false
+    },
+    // 是否全选
+    all: {
+      type: Boolean,
+      default: false
+    },
+    allText: {
+      type: String,
+      default: '全选'
     },
     filterable: {
       type: Boolean,
@@ -106,6 +122,9 @@ export default {
 
   },
   methods: {
+    selectAll() {
+      this.$emit('select-all')
+    },
     onFocus() {
       this.optionsData = this.copyOptions
     },

@@ -49,6 +49,8 @@ optionDisabled | Boolean | false | 是否禁用 option项（是否禁用el-optio
 options | Array | - | 列表数据
 row | Boolean |false | 是否选中option（设置该值后，change方法会打印一个包含options(列表数据)的某一项）
 props | Object | - | label和value的配置 见下表
+all | Boolean | 是否显示全选（multiple为true的前提下）
+all-text | String | 全选文本（默认是全选）
 
 ## props（label、value配置）
 属性 | 值
@@ -60,4 +62,81 @@ value | 设置的value
 方法名 | 说明
 ---|---
 change| 返回 value的值。如果设置了row 则返回一个对象
+select-all | 全选事件
 
+## 全选方法实现
+html    
+```html
+<bl-select
+  v-model="value"
+  clearable
+  multiple
+  collapse-tags
+  all
+  :all-text="allText"
+  :options="options"
+  :props="{
+    value: 'value',
+    label: 'label'
+  }"
+  @change="change"
+  @select-all="selectAll"
+  @remove-tag="removeTag"
+/>
+{{ value }}
+```
+js
+```js
+export default {
+  name: 'App',
+  components: {},
+  data() {
+    return {
+      value: '',
+      options: [{
+        value: '1',
+        label: '黄金糕'
+      }, {
+        value: '2',
+        label: '双皮奶'
+      }, {
+        value: '3',
+        label: '北京糖葫芦'
+      }, {
+        value: '4',
+        label: '蚵仔煎'
+      }, {
+        value: '5',
+        label: '龙须面'
+      }, {
+        value: '6',
+        label: '北京烤鸭'
+      }],
+      allText: '全选'
+    }
+  },
+  methods: {
+    selectAll() {
+      if (this.value.length < this.options.length) {
+        this.value = []
+        this.options.forEach(item => {
+          this.value.push(item.value)
+        })
+        this.value.unshift(this.allText)
+      }
+    },
+    change(val) {
+      if (!val.includes(this.allText) && this.value.length === this.options.length) {
+        this.value.unshift(this.allText)
+      } else if (val.includes(this.allText) && val.length - 1 < this.options.length) {
+        this.value = this.value.filter(item => item !== this.allText)
+      }
+    },
+    removeTag(val) {
+      if (val === this.allText) {
+        this.value = []
+      }
+    }
+  }
+}
+```
