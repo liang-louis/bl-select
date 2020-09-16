@@ -49,8 +49,8 @@ optionDisabled | Boolean | false | 是否禁用 option项（是否禁用el-optio
 options | Array | - | 列表数据
 row | Boolean |false | 是否选中option（设置该值后，change方法会打印一个包含options(列表数据)的某一项）
 props | Object | - | label和value的配置 见下表
-all | Boolean | 是否显示全选（multiple为true的前提下）
-all-text | String | 全选文本（默认是全选）
+all | Boolean | false|是否显示全选（multiple为true的前提下）
+all-text | String | 全选 |全选文本（默认是全选）
 
 ## props（label、value配置）
 属性 | 值
