@@ -3,10 +3,7 @@
     <bl-select
       v-model="value"
       clearable
-      multiple
       collapse-tags
-      all
-      :all-text="allText"
       :options="options"
       :props="{
         value: 'value',
@@ -15,6 +12,7 @@
       @change="change"
       @select-all="selectAll"
       @remove-tag="removeTag"
+      @on-option="getOption"
     />
     {{ value }}
   </div>
@@ -50,6 +48,9 @@ export default {
     }
   },
   methods: {
+    getOption(row) {
+      console.log(row)
+    },
     selectAll() {
       if (this.value.length < this.options.length) {
         this.value = []
@@ -60,6 +61,7 @@ export default {
       }
     },
     change(val) {
+      // console.log(val)
       if (!val.includes(this.allText) && this.value.length === this.options.length) {
         this.value.unshift(this.allText)
       } else if (val.includes(this.allText) && val.length - 1 < this.options.length) {

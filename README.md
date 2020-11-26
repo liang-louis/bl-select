@@ -63,6 +63,7 @@ value | 设置的value
 ---|---
 change| 返回 value的值。如果设置了row 则返回一个对象
 select-all | 全选事件
+on-option | 获取当前选择数据的完整信息
 
 ## 全选方法实现
 html    

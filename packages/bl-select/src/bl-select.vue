@@ -25,6 +25,7 @@
       :disabled="optionDisabled"
       :label="item[props.label]"
       :value="row ? item : item[props.value]"
+      @click.native="getOption(item)"
     />
   </el-select>
 </template>
@@ -122,6 +123,9 @@ export default {
 
   },
   methods: {
+    getOption(row) {
+      this.$emit('on-option', row)
+    },
     selectAll() {
       this.$emit('select-all')
     },
