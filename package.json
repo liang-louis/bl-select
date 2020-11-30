@@ -1,6 +1,6 @@
 {
   "name": "bl-select",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "基于el-select的vue拼音搜索组件",
   "keywords": [
     "BlSelect",
