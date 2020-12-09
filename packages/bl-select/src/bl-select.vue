@@ -22,7 +22,7 @@
       v-for="item in optionsData"
       :key="item[props.value]"
       v-bind="$attrs"
-      :disabled="optionDisabled"
+      :disabled="!!item[fieldDisabled]"
       :label="item[props.label]"
       :value="row ? item : item[props.value]"
       @click.native="getOption(item)"
@@ -66,10 +66,10 @@ export default {
       type: Boolean,
       default: false
     },
-    // option是否禁用
-    optionDisabled: {
-      type: Boolean,
-      default: false
+    // option禁用字段
+    fieldDisabled: {
+      type: String,
+      default: ''
     },
     // 列表数据
     options: {

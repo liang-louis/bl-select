@@ -9,6 +9,7 @@
         value: 'value',
         label: 'label'
       }"
+      field-disabled="disabled"
       @change="change"
       @select-all="selectAll"
       @remove-tag="removeTag"
@@ -27,7 +28,8 @@ export default {
       value: '',
       options: [{
         value: '1',
-        label: '黄金糕'
+        label: '黄金糕',
+        disabled: true
       }, {
         value: '2',
         label: '双皮奶'

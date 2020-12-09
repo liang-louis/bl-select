@@ -45,7 +45,7 @@ multiple | Boolean | false|是否多选，默认单选
 filterable | Boolean | true |是否支持检索，默认true，无需配置。功能已经实现
 clearable | Boolean | false | 是否可清空 同el-select
 disabled | Boolean | false | 是否禁用bl-select
-optionDisabled | Boolean | false | 是否禁用 option项（是否禁用el-option）
+fieldDisabled | String |  | option禁用字段
 options | Array | - | 列表数据
 row | Boolean |false | 是否选中option（设置该值后，change方法会打印一个包含options(列表数据)的某一项）
 props | Object | - | label和value的配置 见下表
