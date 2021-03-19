@@ -1,4 +1,4 @@
-// 导入颜色选择器组件
+// 导入组件
 import BlSelect from './bl-select'
 
 // 存储组件列表

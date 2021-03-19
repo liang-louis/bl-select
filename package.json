@@ -1,6 +1,6 @@
 {
   "name": "bl-select",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "基于el-select的vue拼音搜索组件",
   "keywords": [
     "BlSelect",
@@ -18,7 +18,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name BlSelect --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --dest lib packages/index.js"
   },
   "license": "MIT",
   "dependencies": {

@@ -4,6 +4,7 @@
       v-model="value"
       clearable
       collapse-tags
+      multiple
       :options="options"
       :props="{
         value: 'value',
@@ -51,7 +52,7 @@ export default {
   },
   methods: {
     getOption(row) {
-      console.log(row)
+      console.log(row, '当前选中option')
     },
     selectAll() {
       if (this.value.length < this.options.length) {

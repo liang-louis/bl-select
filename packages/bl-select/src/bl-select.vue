@@ -124,6 +124,7 @@ export default {
   },
   methods: {
     getOption(row) {
+      if (this.multiple) return false
       this.$emit('on-option', row)
     },
     selectAll() {
