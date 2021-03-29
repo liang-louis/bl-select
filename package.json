@@ -1,6 +1,6 @@
 {
   "name": "bl-select",
-  "version": "1.0.11",
+  "version": "1.0.13",
   "description": "基于el-select的vue拼音搜索组件",
   "keywords": [
     "BlSelect",
@@ -10,7 +10,7 @@
     "vue",
     "拼音搜索 select"
   ],
-  "main": "lib/BlSelect.umd.min.js",
+  "main": "lib/index.umd.min.js",
   "author": {
     "name": "louis"
   },
@@ -18,7 +18,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name index --dest lib packages/index.js"
   },
   "license": "MIT",
   "dependencies": {
