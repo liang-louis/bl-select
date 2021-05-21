@@ -10,7 +10,7 @@
     :disabled="disabled"
     :clearable="clearable"
     v-on="$listeners"
-    @focus="onFocus"
+    @visible-change="visibleChange"
   >
     <el-option
       v-if="multiple && all"
@@ -130,8 +130,10 @@ export default {
     selectAll() {
       this.$emit('select-all')
     },
-    onFocus() {
-      this.optionsData = this.copyOptions
+    visibleChange(val) {
+      if (val === true) {
+        this.optionsData = this.copyOptions
+      }
     },
     filterMethod(val) {
       this.optionsData = this.copyOptions
